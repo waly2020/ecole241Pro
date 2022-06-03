@@ -268,7 +268,7 @@ header{
 @media screen and (max-width: 519px){
     .texte{
         left: 3%;
-        top: 30%;
+        top: 40%;
         width: 95%;
         height: auto;
         z-index: 1000;
@@ -312,7 +312,7 @@ header{
         background: #111;
     }
     .texte h1{
-    font-size: 20px;
+    font-size: 26px;
     }
     .logo{
         display: none;
