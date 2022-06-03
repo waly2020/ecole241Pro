@@ -282,7 +282,7 @@ header{
           height: 800px;
       }
     header{
-        background: #111;
+        background: red;
     }
     .texte h1{
     font-size: 30px;
@@ -309,7 +309,7 @@ header{
           height: 800px;
       }
     header{
-        background: #111;
+        background: orange;
     }
     .texte h1{
     font-size: 26px;
