@@ -291,10 +291,10 @@ header{
         background-color: rgba(0, 0, 0, 0.575);
     }
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 360px){
     .texte{
         left: 3%;
-        top: 30%;
+        top: 40%;
         width: 95%;
         height: auto;
         display: block;
