@@ -268,7 +268,7 @@ header{
 @media screen and (max-width: 519px){
     .texte{
         left: 3%;
-        top: 40%;
+        top: 45%;
         width: 95%;
         height: auto;
         z-index: 1000;
@@ -282,7 +282,7 @@ header{
           height: 800px;
       }
     header{
-        background: red;
+        background: #111;
     }
     .texte h1{
     font-size: 30px;
@@ -294,7 +294,7 @@ header{
 @media screen and (max-width: 360px){
     .texte{
         left: 3%;
-        top: 40%;
+        top: 45%;
         width: 95%;
         height: auto;
         display: block;
@@ -309,7 +309,7 @@ header{
           height: 800px;
       }
     header{
-        background: orange;
+        background: #111;
     }
     .texte h1{
     font-size: 26px;
