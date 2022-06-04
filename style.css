@@ -13,7 +13,6 @@
 *,::before,::after{
     margin: 0;
     padding: 0;
-    color: #fff;
     box-sizing: border-box;
 }
 
@@ -53,29 +52,75 @@ header{
 }
 .texte{
     position: absolute;
-    width: 45%;
+    width: 51%;
     /* height: auto; */
     display: grid;
     grid-template-rows: 1fr 0.5fr 43px;
-    left: 10%;
+    left: 8%;
     top: 43%;
     transform: translateY(-50%);
 
 }
 .texte h1{
     font-size: 42px;
-    -webkit-text-stroke: rgb(226, 193, 45) 1px;
-    color: transparent;
     font-family: "gros-titre";
     position: relative;
     letter-spacing: 1.2px;
 }
+.texte h1 span{
+    display: inline-block;
+    position: relative;
+}
+.jaune{
+    -webkit-text-stroke: 1px yellow;
+}
+.titre.active .jaune::before{
+    content: attr(data-texte);
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 1px yellow;
+    overflow: hidden;
+    animation: jaune 3s ease-in-out forwards;
+}
+.blanc{
+    -webkit-text-stroke: 1px #fff;
+}
+.titre.active .blanc::before{
+    content: attr(data-texte);
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 1px #fff;
+    overflow: hidden;
+    animation: blanc 3s ease-in-out forwards;
+}
+.rouge{
+    -webkit-text-stroke: 1px red;
+}
+.titre.active .rouge::before{
+    content: attr(data-texte);
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 1px red;
+    overflow: hidden;
+    animation: rouge 3s ease-in-out forwards;
+}
+
 .decript{
     line-height: 23px;
     margin-bottom: 30px;
     width: 70%;
     margin: 20px 0;
     transform: translateY(20px);
+    color: #fff;
     opacity: 0;
     font-family: "paragraphe";
     transition: .5s 3s ease;
@@ -91,6 +136,7 @@ header{
     background: rgb(150, 33, 33);
     font-weight: bold;
     font-family: "bouton";
+    color: #fff;
     border-radius: 5px;
 }
 .cta_header{
@@ -102,6 +148,7 @@ header{
     overflow: hidden;
     font-weight: bold;
     font-family: "bouton";
+    color: #fff;
     border-radius: 5px;
 }
 .cta_header::before,.cta_header::after{
@@ -164,25 +211,34 @@ header{
     height: 100%;
     border-radius: 50%;
 }
-.titre.active::before{
-    content: attr(data-texte);
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    top: 0;
-    left: 0;
-    -webkit-text-stroke: 0vw #000;
-    overflow: hidden;
-    animation: texte 3s ease-in-out forwards;
-}
-@keyframes texte {
+@keyframes jaune {
     0%{
         height: 0;
-        color: rgb(226, 193, 45);
+        color: yellow;
     }
     100%{
         height: 100%;
-        color: rgb(226, 193, 45);
+        color: yellow;
+    }
+}
+@keyframes rouge {
+    0%{
+        height: 0;
+        color: red;
+    }
+    100%{
+        height: 100%;
+        color: red;
+    }
+}
+@keyframes blanc {
+    0%{
+        height: 0;
+        color: #fff;
+    }
+    100%{
+        height: 100%;
+        color: #fff;
     }
 }
 @keyframes before {
