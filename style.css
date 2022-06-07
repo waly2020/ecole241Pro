@@ -36,19 +36,26 @@ header{
     width: 100%;
     height: 65px;
     position: fixed;
-    z-index: 1000;
+    z-index: 100000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
     padding: 0 10px;
 }
-.logo{
+.logo,.logo_footer{
     width: 170px;
     height: 60px;
     background: url("images/logo.png");
     background-position: center;
     background-size: cover;
+}
+footer{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    padding: 0 10px;
+    display: none;
 }
 .texte{
     position: absolute;
@@ -66,54 +73,22 @@ header{
     font-family: "gros-titre";
     position: relative;
     letter-spacing: 1.2px;
+    color: #fff;
 }
-.texte h1 span{
-    display: inline-block;
+#mots{
+    display: block;
+    background-color: red;
+    min-height: 10px;
     position: relative;
+    color: orange;
 }
-.jaune{
-    -webkit-text-stroke: 1px yellow;
-}
-.titre.active .jaune::before{
-    content: attr(data-texte);
+#mots::after{
+    content: "";
     position: absolute;
+    height: 100%;
     width: 100%;
-    height: 0%;
-    top: 0;
-    left: 0;
-    -webkit-text-stroke: 1px yellow;
-    overflow: hidden;
-    animation: jaune 3s ease-in-out forwards;
+    border-right: solid 1px #fff;
 }
-.blanc{
-    -webkit-text-stroke: 1px #fff;
-}
-.titre.active .blanc::before{
-    content: attr(data-texte);
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    top: 0;
-    left: 0;
-    -webkit-text-stroke: 1px #fff;
-    overflow: hidden;
-    animation: blanc 3s ease-in-out forwards;
-}
-.rouge{
-    -webkit-text-stroke: 1px red;
-}
-.titre.active .rouge::before{
-    content: attr(data-texte);
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    top: 0;
-    left: 0;
-    -webkit-text-stroke: 1px red;
-    overflow: hidden;
-    animation: rouge 3s ease-in-out forwards;
-}
-
 .decript{
     line-height: 23px;
     margin-bottom: 30px;
@@ -123,12 +98,12 @@ header{
     color: #fff;
     opacity: 0;
     font-family: "paragraphe";
-    transition: .5s 3s ease;
+    animation: description 1s 1s ease forwards;
 }
-.decript.active{
+/* .decript.active{
     opacity: 1;
     transform: translateY(0);
-}
+} */
 .cta{
     width: 150px;
     height: 40px;
@@ -152,7 +127,7 @@ header{
     border-radius: 5px;
 }
 .cta_header::before,.cta_header::after{
-    content: "Je m'engage";
+    content: "Ça m'interesse";
     position: absolute;
     left: 0;
     top: 0;
@@ -175,23 +150,20 @@ header{
     opacity: .2;
     background-color: rgb(255, 255, 255);
     z-index: 1000;
+    animation: shadow 2s 4s ease infinite;
 }
-.slider.active{
-    animation: shadow 2s 3s ease infinite;
-}
+/* .slider.active{
+    
+} */
 .cta_header::before{
     background-color: rgb(150, 33, 33);
     transform: translateY(-100%);
+    animation: before 1.3s 2s ease forwards;
 }
 .cta_header::after{
-    background-color: rgb(226, 193, 45);
+    background-color: orange;
     transform: translateX(-100%);
-}
-.cta_header.active::before{
-    animation: before 1.3s 4s ease forwards;
-}
-.cta_header.active::after{
-    animation: after 1.5s 5.3s ease forwards;
+    animation: after 1.5s 3.3s ease forwards;
 }
 .img_cercle{
     position: absolute;
@@ -205,6 +177,13 @@ header{
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 0 0 5px orange;
+}
+.shadaow_img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0);
 }
 .img{
     position: absolute;
@@ -239,36 +218,17 @@ header{
     background-size: cover;
     background-position: center;
 }
-@keyframes jaune {
+@keyframes description {
     0%{
-        height: 0;
-        color: yellow;
+      opacity: 0;
+      transform: translateY(-20px);
     }
     100%{
-        height: 100%;
-        color: yellow;
-    }
+        opacity: 1;
+        transform: translateY(0px);
+      }
 }
-@keyframes rouge {
-    0%{
-        height: 0;
-        color: red;
-    }
-    100%{
-        height: 100%;
-        color: red;
-    }
-}
-@keyframes blanc {
-    0%{
-        height: 0;
-        color: #fff;
-    }
-    100%{
-        height: 100%;
-        color: #fff;
-    }
-}
+
 @keyframes before {
     0%{
         transform: translateY(-100%);
@@ -402,7 +362,11 @@ header{
         display: none;
     }
     .shadaow_img{
-        background-color: rgba(0, 0, 0, 0.575);
+        background-color: rgba(0, 0, 0, 0.685);
+    }
+    footer{
+        display: flex;
+        align-items: center;
     }
 
 }
